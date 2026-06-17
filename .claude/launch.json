@@ -1,0 +1,15 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "vmd-schengen",
+      "runtimeExecutable": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Microsoft\\VisualStudio\\NodeJs\\node.exe",
+      "runtimeArgs": ["C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Microsoft\\VisualStudio\\NodeJs\\node_modules\\npm\\bin\\npm-cli.js", "run", "dev"],
+      "cwd": "client",
+      "port": 5173,
+      "env": {
+        "PATH": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Microsoft\\VisualStudio\\NodeJs"
+      }
+    }
+  ]
+}

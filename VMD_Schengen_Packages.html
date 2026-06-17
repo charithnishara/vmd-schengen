@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VMD Group — Schengen Visa Assistance Packages</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; background: #f5f0e8; color: #1a1a1a; line-height: 1.6; }
+
+  /* NAV */
+  .nav { background: #6B0F1A; padding: 0.75rem 2rem; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.25); }
+  .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .nav-logo { width: 42px; height: 42px; border-radius: 50%; border: 2px solid #B8860B; background: #fdf8f0; display: flex; align-items: center; justify-content: center; font-family: Georgia, serif; font-size: 20px; color: #6B0F1A; font-weight: bold; }
+  .nav-name { color: #F5E6C8; font-size: 16px; font-weight: 600; letter-spacing: 0.02em; }
+  .nav-tagline { color: rgba(245,230,200,0.65); font-size: 12px; font-style: italic; }
+  .nav-contact { color: #F5E6C8; font-size: 13px; display: flex; align-items: center; gap: 6px; }
+
+  /* HERO */
+  .hero { background: linear-gradient(135deg, #6B0F1A 0%, #8B1A2A 50%, #4a0a12 100%); color: #fff; text-align: center; padding: 4rem 2rem 3rem; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23B8860B' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+  .hero-inner { position: relative; max-width: 700px; margin: 0 auto; }
+  .hero-logo { width: 90px; height: 90px; border-radius: 50%; border: 3px solid #B8860B; background: #fdf8f0; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-family: Georgia, serif; font-size: 40px; color: #6B0F1A; font-weight: bold; }
+  .hero h1 { font-family: Georgia, serif; font-size: 2.4rem; color: #F5E6C8; margin-bottom: 0.5rem; font-weight: normal; }
+  .hero-sub { font-size: 1rem; color: rgba(245,230,200,0.75); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 2rem; }
+  .dest-pills { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 2rem; }
+  .pill { font-size: 12px; padding: 5px 14px; border-radius: 999px; background: rgba(184,134,11,0.2); border: 1px solid rgba(184,134,11,0.5); color: #F5E6C8; }
+  .fee-notice { background: rgba(245,230,200,0.12); border: 1px solid rgba(184,134,11,0.5); border-radius: 10px; padding: 0.85rem 1.5rem; font-size: 13px; color: rgba(245,230,200,0.85); max-width: 560px; margin: 0 auto; }
+  .fee-notice strong { color: #F5E6C8; }
+
+  /* MAIN LAYOUT */
+  .main { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+
+  /* TABS */
+  .tab-section { margin-bottom: 3rem; }
+  .tab-heading { font-family: Georgia, serif; font-size: 1.5rem; color: #6B0F1A; margin-bottom: 0.25rem; }
+  .tab-subheading { font-size: 13px; color: #777; margin-bottom: 1.5rem; }
+  .tab-bar { display: flex; gap: 0; background: #fff; border: 1px solid #ddd; border-radius: 10px; overflow: hidden; margin-bottom: 2rem; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
+  .tab { flex: 1; padding: 0.85rem 1rem; font-size: 14px; font-weight: 500; cursor: pointer; border: none; background: transparent; color: #666; border-right: 1px solid #eee; transition: background 0.15s, color 0.15s; }
+  .tab:last-child { border-right: none; }
+  .tab.active { background: #6B0F1A; color: #F5E6C8; }
+  .tab:not(.active):hover { background: #fdf8f0; color: #6B0F1A; }
+
+  /* PACKAGE CARDS */
+  .pkg-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+  .pkg-card { background: #fff; border: 1.5px solid #e8e0d0; border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s; }
+  .pkg-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(107,15,26,0.12); border-color: #B8860B; }
+  .pkg-card.featured { border: 2px solid #B8860B; box-shadow: 0 4px 16px rgba(184,134,11,0.18); }
+  .pkg-header { padding: 1.25rem 1.25rem 1rem; }
+  .pkg-badge { display: inline-block; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 999px; margin-bottom: 0.6rem; letter-spacing: 0.03em; }
+  .badge-green { background: #e8f5d8; color: #3a6b11; }
+  .badge-red { background: #fff0f0; color: #6B0F1A; }
+  .badge-gold { background: #fdf8f0; color: #7a5c00; border: 1px solid #B8860B; }
+  .badge-brown { background: #fdf3ea; color: #7a3b1e; }
+  .pkg-name { font-size: 20px; font-weight: 600; color: #1a1a1a; margin-bottom: 4px; font-family: Georgia, serif; }
+  .pkg-price { font-size: 2rem; font-weight: 700; color: #6B0F1A; line-height: 1.1; margin-bottom: 6px; }
+  .pkg-desc { font-size: 13px; color: #777; line-height: 1.5; }
+  .pkg-divider { height: 1px; background: #f0e8d8; }
+  .pkg-body { padding: 1rem 1.25rem; flex: 1; }
+  .features-label { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #B8860B; margin-bottom: 0.6rem; }
+  .feature-list { list-style: none; display: flex; flex-direction: column; gap: 6px; margin-bottom: 1rem; }
+  .feature-list li { font-size: 13px; color: #444; display: flex; gap: 8px; align-items: flex-start; line-height: 1.45; }
+  .check { color: #B8860B; font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+  .meta-box { background: #fdf8f0; border-radius: 8px; padding: 0.75rem 1rem; }
+  .meta-row { display: flex; flex-direction: column; gap: 5px; }
+  .meta-item { font-size: 12px; color: #555; display: flex; gap: 5px; }
+  .meta-label { font-weight: 600; color: #6B0F1A; white-space: nowrap; }
+  .pkg-footer { padding: 1rem 1.25rem; border-top: 1px solid #f0e8d8; }
+  .pkg-btn { width: 100%; padding: 0.65rem; font-size: 13px; font-weight: 600; border: 1.5px solid #B8860B; border-radius: 8px; background: transparent; color: #6B0F1A; cursor: pointer; transition: background 0.15s; letter-spacing: 0.02em; }
+  .pkg-btn:hover { background: #fdf8f0; }
+  .pkg-btn.primary { background: #6B0F1A; color: #fff; border-color: #6B0F1A; }
+  .pkg-btn.primary:hover { background: #8B1A2A; }
+
+  /* SECTIONS */
+  .section { margin-bottom: 3rem; }
+  .section-title { font-family: Georgia, serif; font-size: 1.5rem; color: #6B0F1A; margin-bottom: 0.25rem; padding-bottom: 0.5rem; border-bottom: 2px solid #B8860B; display: inline-block; }
+  .section-sub { font-size: 13px; color: #777; margin: 0.5rem 0 1.5rem; }
+
+  /* ADDON TABLE */
+  .data-table { width: 100%; border-collapse: collapse; font-size: 14px; border-radius: 10px; overflow: hidden; box-shadow: 0 1px 6px rgba(0,0,0,0.07); }
+  .data-table thead tr { background: #6B0F1A; }
+  .data-table th { padding: 0.75rem 1.25rem; text-align: left; color: #F5E6C8; font-weight: 600; font-size: 13px; letter-spacing: 0.04em; }
+  .data-table th:last-child { text-align: right; }
+  .data-table td { padding: 0.75rem 1.25rem; border-bottom: 1px solid #f0e8d8; color: #333; background: #fff; }
+  .data-table td:last-child { text-align: right; font-weight: 600; color: #6B0F1A; }
+  .data-table tr:nth-child(even) td { background: #fdf8f0; }
+  .data-table tr:last-child td { border-bottom: none; }
+
+  /* INFO GRID */
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 1.5rem; }
+  .info-card { background: #fff; border: 1px solid #e8e0d0; border-radius: 12px; padding: 1.25rem 1.5rem; }
+  .info-card-title { font-size: 14px; font-weight: 600; color: #6B0F1A; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 8px; }
+  .info-card p { font-size: 13px; color: #555; line-height: 1.65; }
+  .info-card strong { color: #1a1a1a; }
+
+  /* NOTES */
+  .notes-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .notes-list li { font-size: 13px; color: #555; display: flex; gap: 10px; line-height: 1.55; padding: 0.7rem 1.1rem; border-radius: 8px; background: #fff; border-left: 3px solid #B8860B; }
+
+  /* DESTINATIONS */
+  .dest-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; }
+  .dest-card { background: #fff; border: 1px solid #e8e0d0; border-radius: 8px; padding: 0.7rem 0.9rem; font-size: 13px; color: #333; display: flex; align-items: center; gap: 7px; transition: border-color 0.15s, background 0.15s; cursor: default; }
+  .dest-card:hover { border-color: #B8860B; background: #fdf8f0; color: #6B0F1A; }
+  .dest-card i { color: #B8860B; font-size: 15px; flex-shrink: 0; }
+
+  /* CTA */
+  .cta { background: linear-gradient(135deg, #6B0F1A, #8B1A2A); border-radius: 16px; padding: 3rem 2rem; text-align: center; color: #fff; }
+  .cta h2 { font-family: Georgia, serif; font-size: 1.75rem; color: #F5E6C8; margin-bottom: 0.75rem; font-weight: normal; }
+  .cta p { font-size: 14px; color: rgba(245,230,200,0.75); margin-bottom: 1.5rem; }
+  .cta-btn { display: inline-block; padding: 0.85rem 2.5rem; background: #B8860B; color: #fff; border: none; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer; text-decoration: none; letter-spacing: 0.02em; transition: background 0.15s; }
+  .cta-btn:hover { background: #c9950e; }
+
+  /* FOOTER */
+  footer { background: #3a0810; color: rgba(245,230,200,0.6); text-align: center; padding: 1.5rem; font-size: 12px; }
+  footer strong { color: #F5E6C8; }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 1.75rem; }
+    .pkg-grid { grid-template-columns: 1fr 1fr; }
+    .info-grid { grid-template-columns: 1fr; }
+    .tab { font-size: 12px; padding: 0.7rem 0.5rem; }
+    .nav-contact { display: none; }
+  }
+  @media (max-width: 420px) {
+    .pkg-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-brand" href="#">
+    <div class="nav-logo">V</div>
+    <div>
+      <div class="nav-name">VMD Group of Companies</div>
+      <div class="nav-tagline">change for the future</div>
+    </div>
+  </a>
+  <div class="nav-contact">
+    <i class="ti ti-mail" style="font-size:16px"></i>
+    Contact us for a free consultation
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-logo">V</div>
+    <h1>Schengen Visa Assistance Packages</h1>
+    <div class="hero-sub">Professional Support &nbsp;·&nbsp; Expert Guidance &nbsp;·&nbsp; Personalised Service</div>
+    <div class="dest-pills">
+      <span class="pill">France</span>
+      <span class="pill">Italy</span>
+      <span class="pill">Greece</span>
+      <span class="pill">Spain</span>
+      <span class="pill">Germany</span>
+      <span class="pill">Netherlands</span>
+      <span class="pill">Switzerland</span>
+      <span class="pill">+ more</span>
+    </div>
+    <div class="fee-notice">
+      <strong>Service fee notice:</strong> All package prices are exclusive of our professional service fee of <strong>£250 per application</strong>, which covers initial consultation and case file opening.
+    </div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- PACKAGES -->
+  <div class="tab-section">
+    <div class="tab-heading">Choose your package</div>
+    <div class="tab-subheading">Select a trip duration to view available packages</div>
+    <div class="tab-bar">
+      <button class="tab active" onclick="switchTab(0)">4 Days / 3 Nights</button>
+      <button class="tab" onclick="switchTab(1)">7 Days / 6 Nights</button>
+      <button class="tab" onclick="switchTab(2)">14 Days / 13 Nights</button>
+    </div>
+    <div id="pkg-grid"></div>
+  </div>
+
+  <!-- ADD-ONS -->
+  <div class="section">
+    <div class="section-title">Add-on services</div>
+    <div class="section-sub">Enhance any package with the following extras (price per applicant)</div>
+    <table class="data-table">
+      <thead><tr><th>Service</th><th>Price</th></tr></thead>
+      <tbody>
+        <tr><td>Cover letter writing</td><td>£20</td></tr>
+        <tr><td>Visa form filling</td><td>£25</td></tr>
+        <tr><td>Appointment booking assistance</td><td>£40</td></tr>
+        <tr><td>Business invitation letter guidance</td><td>£40</td></tr>
+        <tr><td>Itinerary revision</td><td>£10</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- VISA INFO -->
+  <div class="section">
+    <div class="section-title">Visa information</div>
+    <div class="section-sub">Key facts about Schengen visa applications</div>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-card-title"><i class="ti ti-clock" style="font-size:18px;color:#B8860B"></i> Processing time</div>
+        <p>Normal processing: <strong>15 calendar days</strong><br>
+        Extended cases (if more documents needed): up to <strong>45 days</strong></p>
+      </div>
+      <div class="info-card">
+        <div class="info-card-title"><i class="ti ti-calendar" style="font-size:18px;color:#B8860B"></i> When to apply</div>
+        <p>Submit at least <strong>15 days before</strong> your travel date and no earlier than <strong>6 months beforehand</strong>. An appointment may be required.</p>
+      </div>
+    </div>
+
+    <table class="data-table" style="margin-bottom:1.5rem">
+      <thead><tr><th>Applicant category</th><th>Embassy visa fee</th></tr></thead>
+      <tbody>
+        <tr><td>Adults</td><td>€90</td></tr>
+        <tr><td>Children aged 6–12</td><td>€45</td></tr>
+        <tr><td>Armenia, Azerbaijan &amp; Belarus applicants</td><td>€35</td></tr>
+        <tr><td>Cabo Verde applicants</td><td>€67.50</td></tr>
+      </tbody>
+    </table>
+
+    <ul class="notes-list">
+      <li>Flight reservations are temporary bookings for visa purposes — not fully paid tickets.</li>
+      <li>Hotel reservations are provided according to your travel dates and embassy requirements.</li>
+      <li>Processing times may vary during peak travel seasons.</li>
+      <li>Visa approval depends solely on embassy decisions — we cannot guarantee outcomes.</li>
+      <li>Do not purchase non-refundable flight tickets before your visa is approved.</li>
+      <li>All appointment bookings are subject to availability at the relevant embassy or consulate.</li>
+    </ul>
+  </div>
+
+  <!-- DESTINATIONS -->
+  <div class="section">
+    <div class="section-title">Popular Schengen destinations</div>
+    <div class="section-sub">We provide assistance for all 26 Schengen countries, including:</div>
+    <div class="dest-grid">
+      <div class="dest-card"><i class="ti ti-map-pin"></i>Finland</div>
+      <div class="dest-card"><i class="ti ti-map-pin"></i>France</div>
+      <div class="dest-card"><i class="ti ti-map-pin"></i>Germany</div>
+      <div class="dest-card"><i class="ti ti-map-pin"></i>Greece</div>
+      <div class="dest-card"><i class="ti ti-map-pin"></i>Iceland</div>
+      <div class="dest-card"><i class="ti ti-map-pin"></i>Italy</div>
+      <div class="dest-card"><i class="ti ti-map-pin"></i>Latvia</div>
+      <div class="dest-card"><i class="ti ti-map-pin"></i>Liechtenstein</div>
+      <div class="dest-card"><i class="ti ti-map-pin"></i>Lithuania</div>
+      <div class="dest-card"><i class="ti ti-map-pin"></i>Malta</div>
+      <div class="dest-card"><i class="ti ti-map-pin"></i>Netherlands</div>
+      <div class="dest-card"><i class="ti ti-map-pin"></i>Norway</div>
+      <div class="dest-card"><i class="ti ti-map-pin"></i>Romania</div>
+      <div class="dest-card"><i class="ti ti-map-pin"></i>Spain</div>
+      <div class="dest-card"><i class="ti ti-map-pin"></i>Sweden</div>
+      <div class="dest-card"><i class="ti ti-map-pin"></i>Switzerland</div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <h2>Ready to start your Schengen journey?</h2>
+    <p>Our team of experts is here to guide you through every step of the visa application process.</p>
+    <a href="mailto:info@vmdgroup.co.uk" class="cta-btn">Contact us today</a>
+  </div>
+
+</div>
+
+<footer>
+  <strong>VMD Group of Companies</strong> &nbsp;·&nbsp; Schengen Visa Assistance &nbsp;·&nbsp; Confidential document
+</footer>
+
+<script>
+const tabs = [
+  {
+    packages: [
+      { name:"Basic", price:"£100", badge:"badge-green", badgeLabel:"Entry level", desc:"For applicants who already have most documents ready.", features:["Flight reservation / dummy ticket","Hotel reservation for 3 nights","Travel itinerary for 4 days","Visa appointment guidance","Basic document checklist"], processing:"2–6 hours", bestFor:"Solo travelers, self-managing applicants", featured:false },
+      { name:"Standard", price:"£150", badge:"badge-red", badgeLabel:"Most popular", desc:"The most popular choice for Schengen tourist visa applications.", features:["Flight reservation with verifiable PNR","Hotel reservation for 3 nights","Travel itinerary for 4 days","Cover letter","Employment & financial document checklist","Visa form assistance","Email support"], processing:"Priority: 1–3 hours", bestFor:"First-time applicants, family applications", featured:true },
+      { name:"Premium", price:"£250", badge:"badge-gold", badgeLabel:"Full service", desc:"Complete end-to-end Schengen visa preparation.", features:["Flight reservation / dummy ticket","Hotel reservation for 3 nights","Personalised day-by-day itinerary","Professional cover letter","Complete application review","Visa form filling assistance","Embassy-specific checklist","Priority support","Mock interview guidance","Revisions until appointment"], processing:"Priority: 1–3 hours", bestFor:"Business travellers, complex applications", featured:false },
+      { name:"Family", price:"From £320", badge:"badge-brown", badgeLabel:"Families", desc:"Special package for couples and families travelling together.", features:["Group flight reservations / dummy ticket","Family hotel bookings for 3 nights","Combined itinerary for 4 days","Travel insurance support","Cover letters for all applicants","Child document guidance","Full document checklist","Priority support"], processing:"Priority: 1–3 hours", bestFor:"Families with children, couples, groups", featured:false }
+    ]
+  },
+  {
+    packages: [
+      { name:"Basic", price:"£100", badge:"badge-green", badgeLabel:"Entry level", desc:"For applicants who already have most documents ready.", features:["Flight reservation / dummy ticket","Hotel reservation confirmation","Travel itinerary","Visa appointment guidance","Basic document checklist"], processing:"2–6 hours", bestFor:"Solo travelers, self-managing applicants", featured:false },
+      { name:"Standard", price:"£150", badge:"badge-red", badgeLabel:"Most popular", desc:"The most popular choice for Schengen tourist visa applications.", features:["Flight reservation with verifiable PNR","Hotel reservation for full trip","Travel insurance arrangement guidance","Detailed travel itinerary","Cover letter template","Employment & financial document checklist","Visa form assistance","Email support"], processing:"Priority: 1–3 hours", bestFor:"First-time applicants, family applications", featured:true },
+      { name:"Premium", price:"£250", badge:"badge-gold", badgeLabel:"Full service", desc:"Complete end-to-end Schengen visa preparation.", features:["Flight reservation / dummy ticket","Hotel reservation for full trip","Personalised day-by-day itinerary","Professional cover letter","Complete application review","Visa form filling assistance","Embassy-specific checklist","Priority support","Mock interview guidance","Revisions until appointment"], processing:"Priority: 1–3 hours", bestFor:"Business travellers, complex applications", featured:false },
+      { name:"Family", price:"From £320", badge:"badge-brown", badgeLabel:"Families", desc:"Special package for couples and families travelling together.", features:["Group flight reservations / dummy ticket","Family hotel bookings for full trip","Combined itinerary","Cover letters for all applicants","Child document guidance","Full document checklist","Priority support"], processing:"Priority: 1–3 hours", bestFor:"Families with children, couples, groups", featured:false }
+    ]
+  },
+  {
+    packages: [
+      { name:"Basic", price:"£100", badge:"badge-green", badgeLabel:"Entry level", desc:"For applicants who already have most documents ready.", features:["Flight reservation / dummy ticket","Hotel reservation confirmation","Travel itinerary","Visa appointment guidance","Basic document checklist"], processing:"2–6 hours", bestFor:"Solo travellers, self-managing applicants", featured:false },
+      { name:"Standard", price:"£150", badge:"badge-red", badgeLabel:"Most popular", desc:"The most popular choice for Schengen tourist visa applications.", features:["Flight reservation with verifiable PNR","Hotel reservation for full trip","Personalised day-by-day itinerary","Cover letter","Employment & financial document checklist","Visa form assistance","Email support"], processing:"Priority: 1–3 hours", bestFor:"First-time applicants, family applications", featured:true },
+      { name:"Premium", price:"£250", badge:"badge-gold", badgeLabel:"Full service", desc:"Complete end-to-end Schengen visa preparation.", features:["Flight reservation / dummy ticket","Hotel reservation for full trip","Personalised day-by-day itinerary","Professional cover letter","Complete application review","Visa form filling assistance","Embassy-specific checklist","Priority support","Mock interview guidance","Revisions until appointment"], processing:"Priority: 1–3 hours", bestFor:"Business travellers, complex applications", featured:false },
+      { name:"Family", price:"From £320", badge:"badge-brown", badgeLabel:"Families", desc:"Special package for couples and families travelling together.", features:["Group flight reservations / dummy ticket","Family hotel bookings for full trip","Combined itinerary","Cover letters for all applicants","Child document guidance","Full document checklist","Priority support"], processing:"Priority: 1–3 hours", bestFor:"Families with children, couples, groups", featured:false }
+    ]
+  }
+];
+
+let active = 0;
+
+function switchTab(i) {
+  active = i;
+  document.querySelectorAll('.tab').forEach((t, idx) => t.classList.toggle('active', idx === i));
+  render();
+}
+
+function render() {
+  const pkgs = tabs[active].packages;
+  document.getElementById('pkg-grid').innerHTML = '<div class="pkg-grid">' + pkgs.map(p => `
+    <div class="pkg-card${p.featured ? ' featured' : ''}">
+      <div class="pkg-header">
+        <span class="pkg-badge ${p.badge}">${p.badgeLabel}</span>
+        <div class="pkg-name">${p.name}</div>
+        <div class="pkg-price">${p.price}</div>
+        <div class="pkg-desc">${p.desc}</div>
+      </div>
+      <div class="pkg-divider"></div>
+      <div class="pkg-body">
+        <div class="features-label">Included</div>
+        <ul class="feature-list">
+          ${p.features.map(f => `<li><span class="check">✓</span>${f}</li>`).join('')}
+        </ul>
+        <div class="meta-box">
+          <div class="meta-row">
+            <div class="meta-item"><span class="meta-label">Processing:</span> ${p.processing}</div>
+            <div class="meta-item" style="margin-top:4px"><span class="meta-label">Best for:</span> ${p.bestFor}</div>
+          </div>
+        </div>
+      </div>
+      <div class="pkg-footer">
+        <button class="pkg-btn${p.featured ? ' primary' : ''}" onclick="alert('Please contact VMD Group to enquire about the ${p.name} package.')">
+          ${p.featured ? 'Get started →' : 'Learn more →'}
+        </button>
+      </div>
+    </div>
+  `).join('') + '</div>';
+}
+
+render();
+</script>
+</body>
+</html>
