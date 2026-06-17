@@ -26,10 +26,10 @@ export default function Footer() {
             Professional Schengen visa assistance for individuals, families and businesses. Expert guidance, fast delivery, personalised service.
           </p>
           <a
-            href="mailto:mishm.silva@vmdgroup.uk"
+            href="mailto:mishma.silva@vmdgroup.uk"
             className="inline-flex items-center gap-2 text-gold hover:text-gold-light text-xs transition-colors mb-1"
           >
-            <FiMail size={13} /> mishm.silva@vmdgroup.uk
+            <FiMail size={13} /> mishma.silva@vmdgroup.uk
           </a>
           <a
             href="tel:+442033939445"

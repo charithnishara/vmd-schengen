@@ -60,7 +60,7 @@ export default function Contact() {
             <div className="bg-[#fdf8f0] border border-cream-muted rounded-2xl p-6 space-y-4 text-sm">
               <div>
                 <div className="font-semibold text-gray-700 mb-1">Email</div>
-                <a href="mailto:mishm.silva@vmdgroup.uk" className="text-primary hover:text-gold transition-colors">mishm.silva@vmdgroup.uk</a>
+                <a href="mailto:mishma.silva@vmdgroup.uk" className="text-primary hover:text-gold transition-colors">mishma.silva@vmdgroup.uk</a>
               </div>
               <div>
                 <div className="font-semibold text-gray-700 mb-1">Hotline</div>
@@ -149,7 +149,7 @@ export default function Contact() {
             )}
             {status === 'error' && (
               <div className="flex items-center gap-2 text-red-700 bg-red-50 border border-red-200 rounded-xl px-4 py-3 text-sm">
-                <FiAlertCircle size={16} /> Something went wrong. Please email us at mishm.silva@vmdgroup.uk
+                <FiAlertCircle size={16} /> Something went wrong. Please email us at mishma.silva@vmdgroup.uk
               </div>
             )}
 
