@@ -30,7 +30,7 @@ app.post('/api/contact', async (req, res) => {
   try {
     await resend.emails.send({
       from: 'VMD Website <noreply@thinkmodules.com>',
-      to: ['mishm.silva@vmdgroup.uk', 'liyanagamagecn@gmail.com'],
+      to: ['mishma.silva@vmdgroup.uk', 'liyanagamagecn@gmail.com'],
       replyTo: email,
       subject: `New Schengen Visa Enquiry — ${name}`,
       html: `
