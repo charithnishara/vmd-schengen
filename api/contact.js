@@ -16,7 +16,7 @@ export default async function handler(req, res) {
   try {
     await resend.emails.send({
       from: 'VMD Website <noreply@thinkmodules.com>',
-      to: ['mishm.silva@vmdgroup.uk', 'liyanagamagecn@gmail.com'],
+      to: ['mishma.silva@vmdgroup.uk', 'liyanagamagecn@gmail.com'],
       replyTo: email,
       subject: `New Schengen Visa Enquiry — ${name}`,
       html: `
@@ -75,7 +75,7 @@ export default async function handler(req, res) {
             <p>We've received your enquiry and a member of our team will get back to you <strong>within 24 hours</strong> (usually same day).</p>
             <p style="margin-top: 16px;">In the meantime, if you have any urgent questions you can reach us directly:</p>
             <ul style="margin-top: 12px; padding-left: 20px;">
-              <li>Email: <a href="mailto:mishm.silva@vmdgroup.uk" style="color: #6B0F1A;">mishm.silva@vmdgroup.uk</a></li>
+              <li>Email: <a href="mailto:mishma.silva@vmdgroup.uk" style="color: #6B0F1A;">mishma.silva@vmdgroup.uk</a></li>
             </ul>
             <p style="margin-top: 24px; color: #888; font-size: 13px;">Please do not purchase any non-refundable flights or accommodation before your visa is approved.</p>
           </div>
