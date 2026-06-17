@@ -75,7 +75,7 @@ export default async function handler(req, res) {
             <p>We've received your enquiry and a member of our team will get back to you <strong>within 24 hours</strong> (usually same day).</p>
             <p style="margin-top: 16px;">In the meantime, if you have any urgent questions you can reach us directly:</p>
             <ul style="margin-top: 12px; padding-left: 20px;">
-              <li>Email: <a href="mailto:info@vmdgroup.co.uk" style="color: #6B0F1A;">info@vmdgroup.co.uk</a></li>
+              <li>Email: <a href="mailto:mishm.silva@vmdgroup.uk" style="color: #6B0F1A;">mishm.silva@vmdgroup.uk</a></li>
             </ul>
             <p style="margin-top: 24px; color: #888; font-size: 13px;">Please do not purchase any non-refundable flights or accommodation before your visa is approved.</p>
           </div>
