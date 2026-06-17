@@ -88,7 +88,7 @@ app.post('/api/contact', async (req, res) => {
             <p>We've received your enquiry and a member of our team will get back to you <strong>within 24 hours</strong> (usually same day).</p>
             <p style="margin-top: 16px;">In the meantime, if you have any urgent questions you can reach us directly:</p>
             <ul style="margin-top: 12px; padding-left: 20px;">
-              <li>Email: <a href="mailto:mishm.silva@vmdgroup.uk" style="color: #6B0F1A;">mishm.silva@vmdgroup.uk</a></li>
+              <li>Email: <a href="mailto:mishma.silva@vmdgroup.uk" style="color: #6B0F1A;">mishma.silva@vmdgroup.uk</a></li>
               <li>Hotline: <a href="tel:+442033939445" style="color: #6B0F1A;">+44 2033 939445</a></li>
               <li>WhatsApp: <a href="https://wa.me/94742299313" style="color: #6B0F1A;">+94 74 229 9313</a></li>
             </ul>
