@@ -28,9 +28,9 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
         {/* Logo */}
         <a href="#home" className="flex items-center gap-3 flex-shrink-0">
-          <img src="/logo.png" alt="VMD Group" className="h-10 w-10 rounded-full border-2 border-gold object-cover" />
+          <img src="/logo.png" alt="EOPP Ltd" className="h-10 w-10 rounded-full border-2 border-gold object-cover" />
           <div className="hidden sm:block">
-            <div className="text-cream font-semibold text-sm leading-tight">VMD Group of Companies</div>
+            <div className="text-cream font-semibold text-sm leading-tight">Schengen Gateway Masters powered by EOPP Ltd</div>
             <div className="text-cream/60 text-xs italic">change for the future</div>
           </div>
         </a>
