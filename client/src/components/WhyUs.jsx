@@ -39,7 +39,7 @@ export default function WhyUs() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12">
           <p className="text-gold font-medium text-sm uppercase tracking-widest mb-2">Why Choose VMD</p>
-          <h2 className="font-serif text-3xl sm:text-4xl text-primary mb-3">The VMD Difference</h2>
+          <h2 className="font-serif text-3xl sm:text-4xl text-primary mb-3">The Schengen Gateway Masters Difference</h2>
           <p className="text-gray-500 max-w-xl mx-auto text-sm leading-relaxed">
             We combine deep visa expertise with personalised care to deliver a seamless, stress-free application experience.
           </p>
