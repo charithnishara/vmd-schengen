@@ -16,9 +16,9 @@ export default function Footer() {
         {/* Brand */}
         <div className="lg:col-span-1">
           <div className="flex items-center gap-3 mb-4">
-            <img src="/logo.png" alt="VMD" className="h-12 w-12 rounded-full border-2 border-gold object-cover" />
+            <img src="/logo.png" alt="EOPP" className="h-12 w-12 rounded-full border-2 border-gold object-cover" />
             <div>
-              <div className="text-cream font-semibold text-sm">VMD Group</div>
+              <div className="text-cream font-semibold text-sm">EOPP Ltd</div>
               <div className="text-cream/50 text-xs italic">change for the future</div>
             </div>
           </div>
@@ -83,7 +83,7 @@ export default function Footer() {
 
       <div className="border-t border-white/10 px-4 sm:px-6 py-5">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-cream/40">
-          <span>© {new Date().getFullYear()} VMD Group of Companies. All rights reserved.</span>
+          <span>© {new Date().getFullYear()} EOPP Ltd. All rights reserved.</span>
           <span>Schengen Visa Assistance · Confidential &amp; Professional Service</span>
         </div>
       </div>
