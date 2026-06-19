@@ -13,7 +13,7 @@ const packages = [
     {
       name: 'Basic', price: '£100', badgeLabel: 'Entry Level', badgeClass: 'bg-emerald-50 text-emerald-700 border border-emerald-200',
       desc: 'For applicants who already have most documents ready.',
-      features: ['Flight reservation / dummy ticket', 'Hotel reservation for 3 nights', 'Travel itinerary for 4 days', 'Visa appointment guidance', 'Basic document checklist'],
+      features: ['Flight reservation', 'Hotel reservation for 3 nights', 'Travel itinerary for 4 days', 'Visa appointment guidance', 'Basic document checklist'],
       processing: '2–6 days', bestFor: 'Solo travellers, self-managing applicants', featured: false,
     },
     {
@@ -25,13 +25,13 @@ const packages = [
     {
       name: 'Premium', price: '£250', badgeLabel: 'Full Service', badgeClass: 'bg-amber-50 text-amber-800 border border-amber-200',
       desc: 'Complete end-to-end Schengen visa preparation.',
-      features: ['Flight reservation / dummy ticket', 'Hotel reservation for 3 nights', 'Personalised day-by-day itinerary', 'Professional cover letter', 'Complete application review', 'Visa form filling assistance', 'Embassy-specific checklist', 'Priority support', 'Mock interview guidance', 'Revisions until appointment'],
+      features: ['Flight reservation', 'Hotel reservation for 3 nights', 'Personalised day-by-day itinerary', 'Professional cover letter', 'Complete application review', 'Visa form filling assistance', 'Embassy-specific checklist', 'Priority support', 'Mock interview guidance', 'Revisions until appointment'],
       processing: 'Priority: 1–3 days', bestFor: 'Business travellers, complex applications', featured: false,
     },
     {
       name: 'Family', price: 'From £320', badgeLabel: 'Families', badgeClass: 'bg-orange-50 text-orange-800 border border-orange-200',
       desc: 'Special package for couples and families travelling together.',
-      features: ['Group flight reservations / dummy ticket', 'Family hotel bookings for 3 nights', 'Combined itinerary for 4 days', 'Travel insurance support', 'Cover letters for all applicants', 'Child document guidance', 'Full document checklist', 'Priority support'],
+      features: ['Group flight reservations', 'Family hotel bookings for 3 nights', 'Combined itinerary for 4 days', 'Travel insurance support', 'Cover letters for all applicants', 'Child document guidance', 'Full document checklist', 'Priority support'],
       processing: 'Priority: 1–3 days', bestFor: 'Families with children, couples, groups', featured: false,
     },
   ],
@@ -40,7 +40,7 @@ const packages = [
     {
       name: 'Basic', price: '£100', badgeLabel: 'Entry Level', badgeClass: 'bg-emerald-50 text-emerald-700 border border-emerald-200',
       desc: 'For applicants who already have most documents ready.',
-      features: ['Flight reservation / dummy ticket', 'Hotel reservation confirmation', 'Travel itinerary', 'Visa appointment guidance', 'Basic document checklist'],
+      features: ['Flight reservation', 'Hotel reservation confirmation', 'Travel itinerary', 'Visa appointment guidance', 'Basic document checklist'],
       processing: '2–6 days', bestFor: 'Solo travellers, self-managing applicants', featured: false,
     },
     {
@@ -52,13 +52,13 @@ const packages = [
     {
       name: 'Premium', price: '£250', badgeLabel: 'Full Service', badgeClass: 'bg-amber-50 text-amber-800 border border-amber-200',
       desc: 'Complete end-to-end Schengen visa preparation.',
-      features: ['Flight reservation / dummy ticket', 'Hotel reservation for full trip', 'Personalised day-by-day itinerary', 'Professional cover letter', 'Complete application review', 'Visa form filling assistance', 'Embassy-specific checklist', 'Priority support', 'Mock interview guidance', 'Revisions until appointment'],
+      features: ['Flight reservation', 'Hotel reservation for full trip', 'Personalised day-by-day itinerary', 'Professional cover letter', 'Complete application review', 'Visa form filling assistance', 'Embassy-specific checklist', 'Priority support', 'Mock interview guidance', 'Revisions until appointment'],
       processing: 'Priority: 1–3 days', bestFor: 'Business travellers, complex applications', featured: false,
     },
     {
       name: 'Family', price: 'From £320', badgeLabel: 'Families', badgeClass: 'bg-orange-50 text-orange-800 border border-orange-200',
       desc: 'Special package for couples and families travelling together.',
-      features: ['Group flight reservations / dummy ticket', 'Family hotel bookings for full trip', 'Combined itinerary', 'Cover letters for all applicants', 'Child document guidance', 'Full document checklist', 'Priority support'],
+      features: ['Group flight reservations', 'Family hotel bookings for full trip', 'Combined itinerary', 'Cover letters for all applicants', 'Child document guidance', 'Full document checklist', 'Priority support'],
       processing: 'Priority: 1–3 days', bestFor: 'Families with children, couples, groups', featured: false,
     },
   ],
@@ -67,7 +67,7 @@ const packages = [
     {
       name: 'Basic', price: '£100', badgeLabel: 'Entry Level', badgeClass: 'bg-emerald-50 text-emerald-700 border border-emerald-200',
       desc: 'For applicants who already have most documents ready.',
-      features: ['Flight reservation / dummy ticket', 'Hotel reservation confirmation', 'Travel itinerary', 'Visa appointment guidance', 'Basic document checklist'],
+      features: ['Flight reservation', 'Hotel reservation confirmation', 'Travel itinerary', 'Visa appointment guidance', 'Basic document checklist'],
       processing: '2–6 days', bestFor: 'Solo travellers, self-managing applicants', featured: false,
     },
     {
@@ -79,13 +79,13 @@ const packages = [
     {
       name: 'Premium', price: '£250', badgeLabel: 'Full Service', badgeClass: 'bg-amber-50 text-amber-800 border border-amber-200',
       desc: 'Complete end-to-end Schengen visa preparation.',
-      features: ['Flight reservation / dummy ticket', 'Hotel reservation for full trip', 'Personalised day-by-day itinerary', 'Professional cover letter', 'Complete application review', 'Visa form filling assistance', 'Embassy-specific checklist', 'Priority support', 'Mock interview guidance', 'Revisions until appointment'],
+      features: ['Flight reservation', 'Hotel reservation for full trip', 'Personalised day-by-day itinerary', 'Professional cover letter', 'Complete application review', 'Visa form filling assistance', 'Embassy-specific checklist', 'Priority support', 'Mock interview guidance', 'Revisions until appointment'],
       processing: 'Priority: 1–3 days', bestFor: 'Business travellers, complex applications', featured: false,
     },
     {
       name: 'Family', price: 'From £320', badgeLabel: 'Families', badgeClass: 'bg-orange-50 text-orange-800 border border-orange-200',
       desc: 'Special package for couples and families travelling together.',
-      features: ['Group flight reservations / dummy ticket', 'Family hotel bookings for full trip', 'Combined itinerary', 'Cover letters for all applicants', 'Child document guidance', 'Full document checklist', 'Priority support'],
+      features: ['Group flight reservations', 'Family hotel bookings for full trip', 'Combined itinerary', 'Cover letters for all applicants', 'Child document guidance', 'Full document checklist', 'Priority support'],
       processing: 'Priority: 1–3 days', bestFor: 'Families with children, couples, groups', featured: false,
     },
   ],
